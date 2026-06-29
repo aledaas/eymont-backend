@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "37482398d9d1d548fcfa82f4804e6bd3",
+    "content-hash": "4a914f61fbe7cb2772e9c5c4339aca34",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -158,11 +157,6 @@
             "time": "2026-04-23T19:03:45+00:00"
         },
         {
-=======
-    "content-hash": "36793882908b6cbdd344b5a4840231db",
-    "packages": [
-        {
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "brick/math",
             "version": "0.18.0",
             "source": {
@@ -291,7 +285,6 @@
             "time": "2024-02-09T16:56:22+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "chillerlan/php-qrcode",
             "version": "5.0.5",
             "source": {
@@ -559,8 +552,6 @@
             "time": "2026-03-16T11:29:23+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "dflydev/dot-access-data",
             "version": "v3.0.3",
             "source": {
@@ -934,7 +925,6 @@
             "time": "2025-03-06T22:45:56+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "filament/actions",
             "version": "v5.6.7",
             "source": {
@@ -1421,8 +1411,6 @@
             "time": "2026-06-08T09:28:17+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "fruitcake/php-cors",
             "version": "v1.4.0",
             "source": {
@@ -1557,16 +1545,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.12.3",
+            "version": "7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "9aa17bcdd777ee31df9fc83c337ca4ca2340def3"
+                "reference": "a4decaa9745dc567467970e43f183e260cfa51fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9aa17bcdd777ee31df9fc83c337ca4ca2340def3",
-                "reference": "9aa17bcdd777ee31df9fc83c337ca4ca2340def3",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a4decaa9745dc567467970e43f183e260cfa51fd",
+                "reference": "a4decaa9745dc567467970e43f183e260cfa51fd",
                 "shasum": ""
             },
             "require": {
@@ -1585,7 +1573,7 @@
                 "bamarni/composer-bin-plugin": "^1.8.2",
                 "ext-curl": "*",
                 "guzzle/client-integration-tests": "3.0.2",
-                "guzzlehttp/test-server": "^0.5.1",
+                "guzzlehttp/test-server": "^0.6",
                 "php-http/message-factory": "^1.1",
                 "phpunit/phpunit": "^8.5.52 || ^9.6.34",
                 "psr/log": "^1.1 || ^2.0 || ^3.0"
@@ -1665,7 +1653,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.12.3"
+                "source": "https://github.com/guzzle/guzzle/tree/7.13.0"
             },
             "funding": [
                 {
@@ -1681,7 +1669,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-23T15:29:02+00:00"
+            "time": "2026-06-29T13:31:06+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1973,7 +1961,6 @@
             "time": "2026-06-23T13:02:23+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "kirschbaum-development/eloquent-power-joins",
             "version": "4.3.2",
             "source": {
@@ -2037,8 +2024,6 @@
             "time": "2026-05-28T20:35:55+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "laravel/framework",
             "version": "v13.17.0",
             "source": {
@@ -2322,7 +2307,6 @@
             "time": "2026-06-26T00:11:25+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "laravel/sanctum",
             "version": "v4.3.2",
             "source": {
@@ -2386,8 +2370,6 @@
             "time": "2026-04-30T11:46:25+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "laravel/serializable-closure",
             "version": "v2.0.13",
             "source": {
@@ -2707,7 +2689,6 @@
             "time": "2022-12-11T20:36:23+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "league/csv",
             "version": "9.28.0",
             "source": {
@@ -2799,8 +2780,6 @@
             "time": "2025-12-27T15:18:42+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "league/flysystem",
             "version": "3.35.1",
             "source": {
@@ -3087,7 +3066,6 @@
             "time": "2026-03-15T20:22:25+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "league/uri-components",
             "version": "7.8.1",
             "source": {
@@ -3172,8 +3150,6 @@
             "time": "2026-03-15T20:22:25+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "league/uri-interfaces",
             "version": "7.8.1",
             "source": {
@@ -3258,7 +3234,6 @@
             "time": "2026-03-08T20:05:35+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "livewire/livewire",
             "version": "v4.3.3",
             "source": {
@@ -3335,8 +3310,186 @@
             "time": "2026-06-27T03:16:11+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
+            "name": "mongodb/laravel-mongodb",
+            "version": "5.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongodb/laravel-mongodb",
+                "reference": "179946ce5ee892c0c9227a12cc3c09db204c8e82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongodb/laravel-mongodb/zipball/179946ce5ee892c0c9227a12cc3c09db204c8e82",
+                "reference": "179946ce5ee892c0c9227a12cc3c09db204c8e82",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.0.0",
+                "ext-mongodb": "^1.21|^2",
+                "illuminate/cache": "^10.36|^11|^12|^13.0",
+                "illuminate/container": "^10.0|^11|^12|^13.0",
+                "illuminate/database": "^10.30|^11|^12|^13.0",
+                "illuminate/events": "^10.0|^11|^12|^13.0",
+                "illuminate/support": "^10.0|^11|^12|^13.0",
+                "mongodb/mongodb": "^1.21|^2",
+                "php": "^8.1"
+            },
+            "conflict": {
+                "illuminate/bus": "< 10.37.2"
+            },
+            "replace": {
+                "jenssegers/mongodb": "self.version"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^12.0",
+                "laravel/scout": "^10.3",
+                "league/flysystem-gridfs": "^3.28",
+                "league/flysystem-read-only": "^3.0",
+                "mockery/mockery": "^1.4.4",
+                "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+                "phpstan/phpstan": "^1.10|^2.1",
+                "phpunit/phpunit": "^10.3|^11.5.3|^12.5.12",
+                "rector/rector": "^1.2|^2.3",
+                "spatie/laravel-query-builder": "^5.6|^6"
+            },
+            "suggest": {
+                "league/flysystem-gridfs": "Filesystem storage in MongoDB with GridFS"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MongoDB\\Laravel\\MongoDBServiceProvider",
+                        "MongoDB\\Laravel\\MongoDBBusServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MongoDB\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Braun",
+                    "email": "andreas.braun@mongodb.com",
+                    "role": "Leader"
+                },
+                {
+                    "name": "Pauline Vos",
+                    "email": "pauline.vos@mongodb.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jérôme Tamarelle",
+                    "email": "jerome.tamarelle@mongodb.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com",
+                    "role": "Creator"
+                }
+            ],
+            "description": "A MongoDB based Eloquent model and Query builder for Laravel",
+            "homepage": "https://github.com/mongodb/laravel-mongodb",
+            "keywords": [
+                "database",
+                "eloquent",
+                "laravel",
+                "model",
+                "mongo",
+                "mongodb"
+            ],
+            "support": {
+                "issues": "https://www.mongodb.com/support",
+                "security": "https://www.mongodb.com/security"
+            },
+            "time": "2026-06-17T11:34:44+00:00"
+        },
+        {
+            "name": "mongodb/mongodb",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongodb/mongo-php-library",
+                "reference": "12e56461166d915e3dd8e4969ad0940ed5207d88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/12e56461166d915e3dd8e4969ad0940ed5207d88",
+                "reference": "12e56461166d915e3dd8e4969ad0940ed5207d88",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.0",
+                "ext-mongodb": "^2.3",
+                "php": "^8.1",
+                "psr/log": "^1.1.4|^2|^3",
+                "symfony/polyfill-php85": "^1.33"
+            },
+            "replace": {
+                "mongodb/builder": "*"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^12.0",
+                "phpunit/phpunit": "^10.5.35",
+                "rector/rector": "^2.3.4",
+                "squizlabs/php_codesniffer": "^3.7",
+                "vimeo/psalm": "~6.14.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "MongoDB\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Braun",
+                    "email": "andreas.braun@mongodb.com"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Jérôme Tamarelle",
+                    "email": "jerome.tamarelle@mongodb.com"
+                }
+            ],
+            "description": "MongoDB driver library",
+            "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+            "keywords": [
+                "database",
+                "driver",
+                "mongodb",
+                "persistence"
+            ],
+            "time": "2026-04-28T12:50:06+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "3.10.0",
             "source": {
@@ -3545,7 +3698,6 @@
             "time": "2026-06-18T13:49:15+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "nette/php-generator",
             "version": "v4.2.2",
             "source": {
@@ -3620,8 +3772,6 @@
             "time": "2026-02-26T00:58:33+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "nette/schema",
             "version": "v1.3.5",
             "source": {
@@ -3925,7 +4075,6 @@
             "time": "2026-02-16T23:10:27+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "openspout/openspout",
             "version": "v4.32.0",
             "source": {
@@ -4088,8 +4237,6 @@
             "time": "2025-09-24T15:06:41+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "phpoption/phpoption",
             "version": "1.9.5",
             "source": {
@@ -4165,7 +4312,6 @@
             "time": "2025-12-27T19:41:33+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "pragmarx/google2fa",
             "version": "v9.0.0",
             "source": {
@@ -4286,8 +4432,69 @@
             "time": "2026-05-08T19:24:44+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
+            "name": "predis/predis",
+            "version": "v3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "5c996db191ee2d9bafe651f454b1fca16754271b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/5c996db191ee2d9bafe651f454b1fca16754271b",
+                "reference": "5c996db191ee2d9bafe651f454b1fca16754271b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0",
+                "psr/http-message": "^1.0|^2.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.3",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpcov": "^6.0 || ^8.0",
+                "phpunit/phpunit": "^8.0 || ~9.4.4"
+            },
+            "suggest": {
+                "ext-relay": "Faster connection with in-memory caching (>=0.6.2)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Till Krüss",
+                    "homepage": "https://till.im",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A flexible and feature-complete Redis/Valkey client for PHP.",
+            "homepage": "http://github.com/predis/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "support": {
+                "issues": "https://github.com/predis/predis/issues",
+                "source": "https://github.com/predis/predis/tree/v3.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-06-11T16:56:53+00:00"
+        },
+        {
             "name": "psr/clock",
             "version": "1.0.0",
             "source": {
@@ -4977,7 +5184,6 @@
             "time": "2026-06-18T03:57:49+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "ryangjchandler/blade-capture-directive",
             "version": "v1.1.1",
             "source": {
@@ -5499,8 +5705,6 @@
             "time": "2026-04-27T14:27:52+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "symfony/clock",
             "version": "v8.1.0",
             "source": {
@@ -6133,7 +6337,6 @@
             "time": "2026-06-27T09:05:56+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "symfony/html-sanitizer",
             "version": "v8.1.1",
             "source": {
@@ -6206,8 +6409,6 @@
             "time": "2026-06-06T11:11:44+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "symfony/http-foundation",
             "version": "v8.1.1",
             "source": {
@@ -8110,7 +8311,6 @@
             "time": "2025-12-02T11:56:42+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "ueberdosis/tiptap-php",
             "version": "2.1.1",
             "source": {
@@ -8180,8 +8380,6 @@
             "time": "2026-06-12T18:19:46+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "vlucas/phpdotenv",
             "version": "v5.6.3",
             "source": {
@@ -8822,7 +9020,6 @@
             "time": "2026-06-16T15:34:04+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "laravel/sentinel",
             "version": "v1.1.0",
             "source": {
@@ -8948,8 +9145,6 @@
             "time": "2026-04-06T12:52:26+00:00"
         },
         {
-=======
->>>>>>> cae3453 (Initial Laravel installation)
             "name": "mockery/mockery",
             "version": "1.6.12",
             "source": {
