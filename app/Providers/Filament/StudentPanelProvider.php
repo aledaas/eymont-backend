@@ -40,7 +40,7 @@ class StudentPanelProvider extends PanelProvider
             )
 
             ->pages([
-                Dashboard::class,
+
             ])
 
             ->middleware([
