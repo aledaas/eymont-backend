@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\LearningModules\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -34,13 +35,41 @@ class LearningModulesTable
                     ->dateTime('d/m/Y H:i')
                     ->sortable(),
             ])
+
             ->filters([
                 //
             ])
+
             ->recordActions([
+
+                Action::make('lessons')
+                    ->label('Lessons')
+                    ->icon('heroicon-o-academic-cap')
+                    ->slideOver()
+                    ->modalWidth('3xl')
+                    ->modalHeading(
+                        fn ($record) => 'Lessons: ' . $record->title
+                    )
+                    ->modalSubmitAction(false)
+                    ->modalCancelActionLabel('Close')
+                    ->modalContent(function ($record) {
+
+                        return view(
+                            'filament.content.learning-modules.lessons-slide-over',
+                            [
+                                'module' => $record,
+                                'lessons' => $record->lessons()
+                                    ->orderBy('order')
+                                    ->get(),
+                            ]
+                        );
+                    }),
+
                 ViewAction::make(),
+
                 EditAction::make(),
             ])
+
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
