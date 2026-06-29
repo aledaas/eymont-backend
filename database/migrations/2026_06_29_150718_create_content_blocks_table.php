@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->string('title')->nullable();
 
-            $table->json('content')->nullable();
+            $table->longText('content')->nullable();
 
             $table->unsignedInteger('order')
                 ->default(1);

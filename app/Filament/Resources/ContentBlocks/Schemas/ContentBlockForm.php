@@ -2,12 +2,11 @@
 
 namespace App\Filament\Resources\ContentBlocks\Schemas;
 
-use App\Modules\Content\Domain\Models\Lesson;
+use App\Domain\Content\Models\Lesson;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;

@@ -17,6 +17,7 @@ return new class extends Migration
 
             $table->string('level')->nullable();
             $table->string('status')->default('draft');
+            $table->unsignedInteger('sort_order')->default(0);
 
             $table->json('metadata')->nullable();
 

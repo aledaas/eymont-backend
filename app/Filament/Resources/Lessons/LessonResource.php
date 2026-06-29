@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Lessons;
 
+use App\Domain\Content\Models\Lesson;
 use App\Filament\Resources\Lessons\Pages\CreateLesson;
 use App\Filament\Resources\Lessons\Pages\EditLesson;
 use App\Filament\Resources\Lessons\Pages\ListLessons;
@@ -9,7 +10,6 @@ use App\Filament\Resources\Lessons\Pages\ViewLesson;
 use App\Filament\Resources\Lessons\Schemas\LessonForm;
 use App\Filament\Resources\Lessons\Schemas\LessonInfolist;
 use App\Filament\Resources\Lessons\Tables\LessonsTable;
-use App\Modules\Content\Domain\Models\Lesson;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

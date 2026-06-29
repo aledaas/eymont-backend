@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\LearningModules;
 
+use App\Domain\Content\Models\LearningModule;
 use App\Filament\Resources\LearningModules\Pages\CreateLearningModule;
 use App\Filament\Resources\LearningModules\Pages\EditLearningModule;
 use App\Filament\Resources\LearningModules\Pages\ListLearningModules;
@@ -9,7 +10,6 @@ use App\Filament\Resources\LearningModules\Pages\ViewLearningModule;
 use App\Filament\Resources\LearningModules\Schemas\LearningModuleForm;
 use App\Filament\Resources\LearningModules\Schemas\LearningModuleInfolist;
 use App\Filament\Resources\LearningModules\Tables\LearningModulesTable;
-use App\Modules\Content\Domain\Models\LearningModule;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

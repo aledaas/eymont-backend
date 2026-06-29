@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ContentBlocks;
 
+use App\Domain\Content\Models\ContentBlock;
 use App\Filament\Resources\ContentBlocks\Pages\CreateContentBlock;
 use App\Filament\Resources\ContentBlocks\Pages\EditContentBlock;
 use App\Filament\Resources\ContentBlocks\Pages\ListContentBlocks;
@@ -9,7 +10,6 @@ use App\Filament\Resources\ContentBlocks\Pages\ViewContentBlock;
 use App\Filament\Resources\ContentBlocks\Schemas\ContentBlockForm;
 use App\Filament\Resources\ContentBlocks\Schemas\ContentBlockInfolist;
 use App\Filament\Resources\ContentBlocks\Tables\ContentBlocksTable;
-use App\Modules\Content\Domain\Models\ContentBlock;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

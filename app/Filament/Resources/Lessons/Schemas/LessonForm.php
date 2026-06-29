@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Lessons\Schemas;
 
-use App\Modules\Content\Domain\Models\LearningModule;
+use App\Domain\Content\Models\LearningModule;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
