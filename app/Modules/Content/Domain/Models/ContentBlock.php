@@ -27,7 +27,6 @@ class ContentBlock extends Model
     protected function casts(): array
     {
         return [
-            'content' => 'array',
             'metadata' => 'array',
             'neuro_tags' => 'array',
             'is_active' => 'boolean',
