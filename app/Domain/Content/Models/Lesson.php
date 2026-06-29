@@ -2,6 +2,7 @@
 
 namespace App\Domain\Content\Models;
 
+use App\Modules\Learning\Domain\Models\UserProgress;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -39,9 +40,21 @@ class Lesson extends Model
             'learning_module_id'
         );
     }
+
     public function contentBlocks(): HasMany
     {
         return $this->hasMany(ContentBlock::class, 'lesson_id')
             ->orderBy('order');
+    }
+
+    public function exercises(): HasMany
+    {
+        return $this->hasMany(Exercise::class, 'lesson_id')
+            ->orderBy('order');
+    }
+
+    public function progresses(): HasMany
+    {
+        return $this->hasMany(UserProgress::class);
     }
 }

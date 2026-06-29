@@ -2,28 +2,29 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Modules\Assessment\Domain\Models\UserAnswer;
+use App\Modules\IAM\Domain\Models\StudentProfile;
+use App\Modules\Learning\Domain\Models\LearningSession;
+use App\Modules\Learning\Domain\Models\UserProgress;
 use Database\Factories\UserFactory;
+use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, HasRoles;
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
@@ -35,26 +36,47 @@ class User extends Authenticatable
     public function canAccessPanel(Panel $panel): bool
     {
         return match ($panel->getId()) {
-            // Backoffice principal
             'admin' => $this->hasAnyRole([
                 'super_admin',
                 'admin',
                 'teacher',
             ]),
-            // Experiencia de aprendizaje
+
             'student' => $this->hasRole('student'),
-            // Futuros paneles
+
             'analytics' => $this->hasAnyRole([
                 'super_admin',
                 'admin',
                 'researcher',
             ]),
+
             'reviewer' => $this->hasAnyRole([
                 'super_admin',
                 'admin',
                 'content_reviewer',
             ]),
+
             default => false,
         };
+    }
+
+    public function studentProfile(): HasOne
+    {
+        return $this->hasOne(StudentProfile::class);
+    }
+
+    public function progresses(): HasMany
+    {
+        return $this->hasMany(UserProgress::class);
+    }
+
+    public function answers(): HasMany
+    {
+        return $this->hasMany(UserAnswer::class);
+    }
+
+    public function learningSessions(): HasMany
+    {
+        return $this->hasMany(LearningSession::class);
     }
 }

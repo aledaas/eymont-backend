@@ -2,7 +2,11 @@
 
 namespace App\Domain\Content\Models;
 
+use App\Modules\Assessment\Domain\Models\UserAnswer;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Exercise extends Model
 {
@@ -31,17 +35,17 @@ class Exercise extends Model
         'ai_evaluable' => 'boolean',
     ];
 
-    public function lesson()
+    public function lesson(): BelongsTo
     {
         return $this->belongsTo(Lesson::class);
     }
 
-    public function contentBlock()
+    public function contentBlock(): BelongsTo
     {
         return $this->belongsTo(ContentBlock::class);
     }
 
-    public function template()
+    public function template(): BelongsTo
     {
         return $this->belongsTo(
             ExerciseTemplate::class,
@@ -49,13 +53,18 @@ class Exercise extends Model
         );
     }
 
-    public function neuroTags()
+    public function neuroTags(): BelongsToMany
     {
         return $this->belongsToMany(NeuroTag::class);
     }
 
-    public function errorPatterns()
+    public function errorPatterns(): BelongsToMany
     {
         return $this->belongsToMany(ErrorPattern::class);
+    }
+
+    public function answers(): HasMany
+    {
+        return $this->hasMany(UserAnswer::class);
     }
 }
