@@ -56,6 +56,30 @@
         </div>
 
         <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
+            <h2 class="text-lg font-semibold text-gray-950 dark:text-white">
+                Tus errores frecuentes
+            </h2>
+
+            <div class="mt-4 space-y-3">
+                @forelse ($frequentErrors as $error)
+                    <div class="flex items-center justify-between rounded-lg bg-gray-50 px-4 py-3 dark:bg-gray-800">
+                <span class="text-sm font-medium text-gray-700 dark:text-gray-200">
+                    {{ $error['name'] }}
+                </span>
+
+                        <span class="rounded-full bg-danger-100 px-3 py-1 text-xs font-semibold text-danger-700 dark:bg-danger-500/20 dark:text-danger-300">
+                    {{ $error['count'] }}
+                </span>
+                    </div>
+                @empty
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        Todavía no registramos errores frecuentes. Completá algunos ejercicios para empezar a detectar patrones.
+                    </p>
+                @endforelse
+            </div>
+        </div>
+
+        <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
 
             <div class="mb-5">
                 <h2 class="text-lg font-semibold">

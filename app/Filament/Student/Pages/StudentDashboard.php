@@ -3,6 +3,7 @@
 namespace App\Filament\Student\Pages;
 
 use App\Domain\Content\Models\LearningModule;
+use App\Modules\Assessment\Domain\Models\UserAnswer;
 use Filament\Pages\Page;
 
 class StudentDashboard extends Page
@@ -38,6 +39,24 @@ class StudentDashboard extends Page
             ->orderBy('sort_order')
             ->get();
 
+        $frequentErrors = UserAnswer::query()
+            ->where('user_id', $user->id)
+            ->whereNotNull('error_pattern_id')
+            ->with('errorPattern')
+            ->get()
+            ->groupBy('error_pattern_id')
+            ->map(function ($answers) {
+                $errorPattern = $answers->first()->errorPattern;
+
+                return [
+                    'name' => $errorPattern?->name ?? 'Unknown error',
+                    'count' => $answers->count(),
+                ];
+            })
+            ->sortByDesc('count')
+            ->values()
+            ->toArray();
+
         return [
             'user' => $user,
 
@@ -55,6 +74,8 @@ class StudentDashboard extends Page
 
             'studyTime' => $user->learningSessions()
                 ->sum('total_time'),
+
+            'frequentErrors' => $frequentErrors,
         ];
     }
 }
