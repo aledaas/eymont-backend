@@ -4,6 +4,7 @@ namespace App\Filament\Student\Pages;
 
 use App\Domain\Content\Models\LearningModule;
 use App\Modules\Assessment\Domain\Models\UserAnswer;
+use App\Modules\Learning\Domain\Models\AdaptiveRecommendation;
 use Filament\Pages\Page;
 
 class StudentDashboard extends Page
@@ -39,13 +40,16 @@ class StudentDashboard extends Page
             ->orderBy('sort_order')
             ->get();
 
-        $frequentErrors = UserAnswer::query()
+        $answersByPattern = UserAnswer::query()
             ->where('user_id', $user->id)
             ->whereNotNull('error_pattern_id')
-            ->with('errorPattern')
+            ->with('errorPattern.recommendedLesson')
             ->get()
-            ->groupBy('error_pattern_id')
+            ->groupBy('error_pattern_id');
+
+        $frequentErrors = $answersByPattern
             ->map(function ($answers) {
+
                 $errorPattern = $answers->first()->errorPattern;
 
                 return [
@@ -56,6 +60,43 @@ class StudentDashboard extends Page
             ->sortByDesc('count')
             ->values()
             ->toArray();
+
+        $topErrorPattern = $answersByPattern
+            ->sortByDesc(fn ($answers) => $answers->count())
+            ->first()?->first()?->errorPattern;
+
+        if (
+            $topErrorPattern &&
+            $topErrorPattern->recommendedLesson
+        ) {
+            AdaptiveRecommendation::firstOrCreate(
+                [
+                    'user_id' => $user->id,
+                    'error_pattern_id' => $topErrorPattern->id,
+                    'recommended_lesson_id' => $topErrorPattern->recommendedLesson->id,
+                    'status' => 'shown',
+                ],
+                [
+                    'reason' => 'Frequent error pattern detected',
+                    'shown_at' => now(),
+                ]
+            );
+        }
+
+        if ($topErrorPattern?->recommendedLesson) {
+            AdaptiveRecommendation::firstOrCreate(
+                [
+                    'user_id' => $user->id,
+                    'error_pattern_id' => $topErrorPattern->id,
+                    'recommended_lesson_id' => $topErrorPattern->recommendedLesson->id,
+                    'status' => 'shown',
+                ],
+                [
+                    'reason' => 'Top frequent error pattern recommendation.',
+                    'shown_at' => now(),
+                ]
+            );
+        }
 
         return [
             'user' => $user,
@@ -76,6 +117,8 @@ class StudentDashboard extends Page
                 ->sum('total_time'),
 
             'frequentErrors' => $frequentErrors,
+
+            'topErrorPattern' => $topErrorPattern,
         ];
     }
 }

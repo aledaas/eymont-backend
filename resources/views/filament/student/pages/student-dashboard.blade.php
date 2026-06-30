@@ -55,29 +55,97 @@
 
         </div>
 
-        <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
-            <h2 class="text-lg font-semibold text-gray-950 dark:text-white">
-                Tus errores frecuentes
-            </h2>
+        @if (count($frequentErrors) > 0)
 
-            <div class="mt-4 space-y-3">
-                @forelse ($frequentErrors as $error)
-                    <div class="flex items-center justify-between rounded-lg bg-gray-50 px-4 py-3 dark:bg-gray-800">
-                <span class="text-sm font-medium text-gray-700 dark:text-gray-200">
-                    {{ $error['name'] }}
-                </span>
+            <div
+                class="grid gap-6"
+                style="grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); align-items: stretch;"
+            >
 
-                        <span class="rounded-full bg-danger-100 px-3 py-1 text-xs font-semibold text-danger-700 dark:bg-danger-500/20 dark:text-danger-300">
-                    {{ $error['count'] }}
-                </span>
+                {{-- Errores frecuentes --}}
+                <div class="h-full rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
+
+                    <h2 class="text-lg font-semibold text-gray-950 dark:text-white">
+                        Tus errores frecuentes
+                    </h2>
+
+                    <div class="mt-4 space-y-3">
+
+                        @foreach ($frequentErrors as $error)
+
+                            <div class="flex items-center justify-between rounded-lg bg-gray-50 px-4 py-3 dark:bg-gray-800">
+
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-200">
+                            {{ $error['name'] }}
+                        </span>
+
+                                <span
+                                    style="
+                                background:#ef4444;
+                                color:white;
+                                padding:4px 12px;
+                                border-radius:999px;
+                                font-weight:bold;
+                            ">
+                            {{ $error['count'] }}
+                        </span>
+
+                            </div>
+
+                        @endforeach
+
                     </div>
-                @empty
-                    <p class="text-sm text-gray-500 dark:text-gray-400">
-                        Todavía no registramos errores frecuentes. Completá algunos ejercicios para empezar a detectar patrones.
-                    </p>
-                @endforelse
+
+                </div>
+
+                {{-- Recomendación --}}
+                @if ($topErrorPattern?->student_message)
+
+                    <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
+
+                        <p class="text-sm font-semibold text-primary-600">
+                            🎯 Recomendado para vos
+                        </p>
+
+                        <h2 class="mt-3 text-xl font-bold">
+                            {{ $topErrorPattern->recommendedLesson?->title ?? 'Práctica recomendada' }}
+                        </h2>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                            {{ $topErrorPattern->student_message }}
+                        </p>
+
+                        @if ($topErrorPattern->recommendedLesson)
+
+                            <div class="mt-6">
+
+                                <a
+                                    href="{{ url('/student/lesson-player?lesson=' . $topErrorPattern->recommendedLesson->id) }}"
+                                    style="
+                    display:inline-block;
+                    background:#f97316;
+                    color:white;
+                    padding:12px 24px;
+                    border-radius:8px;
+                    font-weight:600;
+                    text-decoration:none;
+                ">
+
+                                    Practicar ahora →
+
+                                </a>
+
+                            </div>
+
+                        @endif
+
+                    </div>
+
+                @endif
+
             </div>
-        </div>
+
+        @endif
 
         <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
 
@@ -112,7 +180,6 @@
                         </div>
 
                         <div>
-
                             @php
                                 $firstLesson = $module->lessons()
                                     ->orderBy('order')
@@ -120,21 +187,16 @@
                             @endphp
 
                             @if($firstLesson)
-
                                 <a href="{{ url('/student/lesson-player?lesson=' . $firstLesson->id) }}">
                                     <button type="button">
                                         Continuar
                                     </button>
                                 </a>
-
                             @else
-
                                 <span class="text-sm text-gray-400">
                                     Sin lessons
                                 </span>
-
                             @endif
-
                         </div>
 
                     </div>
@@ -142,11 +204,9 @@
                 @empty
 
                     <div class="rounded-lg border border-dashed border-gray-300 p-6 text-center dark:border-white/10">
-
                         <p class="text-sm text-gray-500 dark:text-gray-400">
                             Todavía no hay módulos publicados.
                         </p>
-
                     </div>
 
                 @endforelse

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Exercises;
 
+use App\Domain\Content\Models\Exercise;
 use App\Filament\Resources\Exercises\Pages\CreateExercise;
 use App\Filament\Resources\Exercises\Pages\EditExercise;
 use App\Filament\Resources\Exercises\Pages\ListExercises;
@@ -9,7 +10,6 @@ use App\Filament\Resources\Exercises\Pages\ViewExercise;
 use App\Filament\Resources\Exercises\Schemas\ExerciseForm;
 use App\Filament\Resources\Exercises\Schemas\ExerciseInfolist;
 use App\Filament\Resources\Exercises\Tables\ExercisesTable;
-use App\Models\Exercise;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;

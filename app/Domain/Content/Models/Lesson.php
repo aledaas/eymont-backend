@@ -2,6 +2,7 @@
 
 namespace App\Domain\Content\Models;
 
+use App\Modules\Learning\Domain\Models\AdaptiveRecommendation;
 use App\Modules\Learning\Domain\Models\UserProgress;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -56,5 +57,13 @@ class Lesson extends Model
     public function progresses(): HasMany
     {
         return $this->hasMany(UserProgress::class);
+    }
+
+    public function adaptiveRecommendations(): HasMany
+    {
+        return $this->hasMany(
+            AdaptiveRecommendation::class,
+            'recommended_lesson_id'
+        );
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Modules\Assessment\Domain\Models\UserAnswer;
 use App\Modules\IAM\Domain\Models\StudentProfile;
+use App\Modules\Learning\Domain\Models\AdaptiveRecommendation;
 use App\Modules\Learning\Domain\Models\LearningSession;
 use App\Modules\Learning\Domain\Models\UserProgress;
 use Database\Factories\UserFactory;
@@ -78,5 +79,10 @@ class User extends Authenticatable implements FilamentUser
     public function learningSessions(): HasMany
     {
         return $this->hasMany(LearningSession::class);
+    }
+
+    public function adaptiveRecommendations(): HasMany
+    {
+        return $this->hasMany(AdaptiveRecommendation::class);
     }
 }

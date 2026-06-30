@@ -24,6 +24,8 @@ class Exercise extends Model
         'skill',
         'evaluation_criteria',
         'ai_evaluable',
+        'generated_by_ai',
+        'parent_exercise_id',
         'status',
         'order',
     ];
@@ -33,6 +35,7 @@ class Exercise extends Model
         'expected_answer' => 'array',
         'evaluation_criteria' => 'array',
         'ai_evaluable' => 'boolean',
+        'generated_by_ai' => 'boolean',
     ];
 
     public function lesson(): BelongsTo
@@ -50,6 +53,22 @@ class Exercise extends Model
         return $this->belongsTo(
             ExerciseTemplate::class,
             'exercise_template_id'
+        );
+    }
+
+    public function parentExercise(): BelongsTo
+    {
+        return $this->belongsTo(
+            self::class,
+            'parent_exercise_id'
+        );
+    }
+
+    public function aiVariants(): HasMany
+    {
+        return $this->hasMany(
+            self::class,
+            'parent_exercise_id'
         );
     }
 
