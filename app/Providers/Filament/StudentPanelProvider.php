@@ -24,6 +24,7 @@ class StudentPanelProvider extends PanelProvider
         return $panel
             ->id('student')
             ->path('student')
+            ->viteTheme('resources/css/filament/student/theme.css')
             ->login()
             ->colors([
                 'primary' => Color::Amber,

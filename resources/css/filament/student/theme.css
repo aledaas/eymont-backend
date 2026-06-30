@@ -1,0 +1,32 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/Student/**/*';
+@source '../../../../resources/views/filament/student/**/*';
+
+/*
+|--------------------------------------------------------------------------
+| Student Panel Layout Overrides
+|--------------------------------------------------------------------------
+| El panel student no es backoffice.
+| Necesita usar todo el ancho disponible para experiencias de aprendizaje.
+*/
+
+.fi-main {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.fi-page {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.fi-page-content {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+.fi-main-ctn {
+    max-width: none !important;
+    width: 100% !important;
+}

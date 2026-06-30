@@ -21,9 +21,20 @@ class StudentDashboard extends Page
     {
         $user = auth()->user();
 
+        $completedLessonIds = $user->progresses()
+            ->where('status', 'completed')
+            ->pluck('lesson_id');
+
         $availableModules = LearningModule::query()
             ->where('status', 'published')
-            ->withCount('lessons')
+            ->whereHas('lessons', function ($query) use ($completedLessonIds) {
+                $query->whereNotIn('id', $completedLessonIds);
+            })
+            ->withCount([
+                'lessons' => function ($query) use ($completedLessonIds) {
+                    $query->whereNotIn('id', $completedLessonIds);
+                },
+            ])
             ->orderBy('sort_order')
             ->get();
 

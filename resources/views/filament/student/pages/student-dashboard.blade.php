@@ -12,6 +12,7 @@
         </div>
 
         <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+
             <div class="rounded-xl bg-white p-5 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
                 <div class="text-sm text-gray-500 dark:text-gray-400">
                     Módulos disponibles
@@ -51,9 +52,11 @@
                     {{ $studyTime }} min
                 </div>
             </div>
+
         </div>
 
         <div class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10">
+
             <div class="mb-5">
                 <h2 class="text-lg font-semibold">
                     Módulos disponibles
@@ -64,9 +67,12 @@
                 </p>
             </div>
 
-            <div class="space-y-3">
+            <div class="space-y-4">
+
                 @forelse($availableModules as $module)
+
                     <div class="flex items-center justify-between rounded-xl border border-gray-200 p-4 dark:border-white/10">
+
                         <div>
                             <h3 class="font-semibold">
                                 {{ $module->title }}
@@ -81,21 +87,48 @@
                             </p>
                         </div>
 
-                        <x-filament::button
-                            color="primary"
-                            size="sm"
-                        >
-                            Continuar
-                        </x-filament::button>
+                        <div>
+
+                            @php
+                                $firstLesson = $module->lessons()
+                                    ->orderBy('order')
+                                    ->first();
+                            @endphp
+
+                            @if($firstLesson)
+
+                                <a href="{{ url('/student/lesson-player?lesson=' . $firstLesson->id) }}">
+                                    <button type="button">
+                                        Continuar
+                                    </button>
+                                </a>
+
+                            @else
+
+                                <span class="text-sm text-gray-400">
+                                    Sin lessons
+                                </span>
+
+                            @endif
+
+                        </div>
+
                     </div>
+
                 @empty
+
                     <div class="rounded-lg border border-dashed border-gray-300 p-6 text-center dark:border-white/10">
+
                         <p class="text-sm text-gray-500 dark:text-gray-400">
                             Todavía no hay módulos publicados.
                         </p>
+
                     </div>
+
                 @endforelse
+
             </div>
+
         </div>
 
     </div>
